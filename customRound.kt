@@ -1,12 +1,13 @@
-fun round(num: Int) : Int {
+fun round(num: Int) : List<Int> {
 	
 	var doubleValue : Double = num.toDouble() / 2
-	var result : Int = 0
+	var firstNum : Int
+	var result = mutableListOf<Int>()
 	
 	if (doubleValue % 1 >= 0.5){
-			result = (doubleValue + 1).toInt()
-		} else {
-			result = result.toInt()
+			firstNum = (doubleValue + 1).toInt()
+			result.add(firstNum)
+			result.add(num - firstNum)
 		}
 	return result
 }
